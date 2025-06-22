@@ -26,29 +26,34 @@ export default function ThemeToggle() {
     <Switch.Root
       checked={dark}
       onCheckedChange={toggleTheme}
-      className="relative w-20 h-10 flex items-center rounded-full bg-white/20 dark:bg-white/10 border border-white/20 backdrop-blur-md shadow-inner cursor-pointer"
+      className="relative w-20 h-10 flex items-center rounded-full bg-white/20 dark:bg-white/10 border border-black/20 dark:border-black/20 backdrop-blur-md shadow-inner cursor-pointer"
     >
       {/* Íconos fijos */}
       <Sun
-        className={`absolute left-3 top-1/2 -translate-y-1/2 transition-opacity ${dark ? "opacity-30" : "opacity-100"} text-yellow-400`}
+        className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
+          dark ? "opacity-30 text-yellow-200" : "opacity-100 text-orange-400"
+        }`}
         size={16}
       />
       <Moon
-        className={`absolute right-3 top-1/2 -translate-y-1/2 transition-opacity ${dark ? "opacity-100" : "opacity-30"} text-zinc-100`}
+        className={`absolute right-3 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
+          dark ? "opacity-100 text-yellow-200" : "opacity-30 text-zinc-900"
+        }`}
         size={16}
       />
 
       {/* Thumb animado */}
       <Switch.Thumb asChild>
         <motion.div
-          className="absolute w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center shadow-lg border border-indigo-300 text-white"
+          className={`absolute w-8 h-8 rounded-full flex items-center justify-center shadow-lg border border-white/20 transition-colors duration-500 ${
+            dark
+              ? "bg-gray-950"
+              : "bg-gradient-to-br from-indigo-400 to-indigo-500"
+          }`}
           layout
           whileTap={{ scale: 0.9 }}
           transition={{ type: "spring", stiffness: 250, damping: 20 }}
-          animate={{
-            x: dark ? 42 : 2,
-            rotate: dark ? 360 : 0, // Aquí le agregamos el giro
-          }}
+          animate={{ x: dark ? 42 : 2, rotate: dark ? 360 : 0 }}
         >
           <motion.div
             key={dark ? "moon" : "sun"}
@@ -57,7 +62,7 @@ export default function ThemeToggle() {
             exit={{ scale: 0 }}
           >
             {dark ? (
-              <Moon size={16} className="text-yellow-200" />
+              <Moon size={16} className="text-white" />
             ) : (
               <Sun size={16} className="text-white" />
             )}
