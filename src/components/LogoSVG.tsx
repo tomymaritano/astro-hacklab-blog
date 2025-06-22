@@ -12,7 +12,7 @@ export default function LogoSVG() {
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
     >
       {/* Podés poner aquí un <svg> custom. Por ahora es solo texto */}
-      HackLab
+      Blog
     </motion.a>
   );
 }

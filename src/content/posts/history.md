@@ -2,7 +2,7 @@
 title: "Mi historia: de programar en casa a trabajar remoto desde cualquier lugar"
 date: "2025-06-2"
 excerpt: "Soy Tomy, un Product Engineer apasionado por el código, el minimalismo japonés y la libertad de trabajar desde donde sea."
-coverImage: "/images/mi-historia-cover.jpg"
+coverImage: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 ---
 
 # Mi historia: de programar en casa a trabajar remoto desde cualquier lugar
@@ -20,6 +20,10 @@ Empecé desarmando programas, entendiendo qué hacía que funcionaran, y escribi
 Cuando empecé a trabajar en proyectos propios y para empresas, sentí que quería algo más que un horario fijo y una oficina tradicional. Para mí, la libertad es tan importante como el trabajo bien hecho, y eso me llevó a convertirme en **nómada digital**.
 
 Desde entonces, trabajo desde mi casa, desde cafés en cualquier ciudad, o desde algún punto perdido del mapa. Mi laptop es mi estudio, mi oficina y mi laboratorio. Eso me enseñó a adaptarme rápido, a comunicarme bien y a mantener la calidad sin importar dónde esté.
+
+![My workspace on the go](https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
+
+
 
 ## La influencia del minimalismo y la estética japonesa
 
@@ -49,5 +53,7 @@ Cuando trabajo con clientes o startups, mi objetivo es que las cosas sean **clar
 Hoy sigo aprendiendo, explorando nuevos lenguajes, nuevos proyectos y nuevos destinos. Lo que nunca cambia es mi búsqueda por crear cosas que sirvan, que sean bellas y que duren.
 
 Si leíste hasta acá, gracias por acompañarme. Espero que mi historia te sirva de inspiración para que también vos te animes a vivir a tu manera y a crear con propósito.
+
+![My workspace on the go](https://images.unsplash.com/photo-1690228254548-31ef53e40cd1?q=80&w=1142&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
 **— Tomy**

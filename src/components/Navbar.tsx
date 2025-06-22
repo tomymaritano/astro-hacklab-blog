@@ -7,7 +7,10 @@ import SearchSpotlight from "./SearchSpotlight";
 import ThemeToggle from "./ThemeToggle";
 import LogoSVG from "./LogoSVG";
 
-const links = [{ href: "/", label: "Home" }];
+const links = [
+  { href: "/", label: "Home" },
+{ href: "https://www.bio.hacklab.dog", label: "Bio" }
+];
 
 interface NavbarProps {
   posts: { slug: string; data: { title: string } }[];
@@ -36,7 +39,7 @@ export default function Navbar({ posts }: NavbarProps) {
         animate={{ y: hidden ? "-100%" : "0%" }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
       >
-        <div className="max-w-4xl mx-auto h-full px-4 sm:px-6 flex justify-between items-center">
+        <div className="max-w-3xl mx-auto h-full px-4 sm:px-6 flex justify-between items-center">
           <LogoSVG />
 
           {/* Desktop */}
