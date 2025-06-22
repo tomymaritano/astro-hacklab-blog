@@ -1,21 +1,29 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
 import Navbar from "../components/Navbar";
-import PostListLayout from "../layouts/PostListLayout.astro";
+import Header from "../components/Header.astro";
+import PostGrid from "../components/PostGrid.astro";
 import { getCollection } from "astro:content";
 
 const posts = await getCollection("posts");
 ---
 
-<html lang="en">
-  <body class="bg-white dark:bg-[#010102] min-h-screen">
+<!doctype html>
+<html lang="en" class="antialiased">
+  <head>
+    <title>HackLab — Posts</title>
+  </head>
+  <body class="bg-white dark:bg-[#010102] min-h-screen flex flex-col">
     <Navbar client:only="react" />
 
-    <PostListLayout posts={posts.map((post) => ({
-      title: post.data.title,
-      slug: post.slug,
-      excerpt: post.data.excerpt,
-      date: post.data.date,
-    }))} />
+    <Header
+      title="HackLab"
+      subtitle="Explorando desarrollo web, UI y más."
+      videoUrl="./background.mp4"
+    />
+
+    <main class="pt-10 pb-10">
+      <PostGrid posts={posts} />
+    </main>
   </body>
 </html>

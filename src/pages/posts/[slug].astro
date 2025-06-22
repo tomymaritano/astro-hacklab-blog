@@ -1,24 +1,13 @@
 ---
-import PostLayout from "../../layouts/PostLayout.astro";
 import { getCollection, render } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post }
-  }));
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
 
-// Recibimos el post completo en props
 const { post } = Astro.props;
-
-// Renderizamos el Markdown del post
-const { Content } = await render(post);
+const { Content } = await render(post); 
 ---
-
-<html lang="en">
-  <body class="bg-white dark:bg-black min-h-screen">
-    <PostLayout post={post} Content={Content} />
-  </body>
-</html>
+<PostLayout post={post} Content={Content} />
