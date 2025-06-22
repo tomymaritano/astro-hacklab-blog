@@ -18,7 +18,7 @@ const posts = await getCollection("posts");
   <body
     class="bg-white dark:bg-[#0B0B0B] min-h-screen flex flex-col text-black dark:text-white"
   >
-    <Navbar client:only="react" posts={posts} />
+    <Navbar client:only="react" posts={post.data.posts ?? []} />
 
     <Header
       title="What I thought"
