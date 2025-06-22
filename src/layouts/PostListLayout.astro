@@ -1,0 +1,24 @@
+---
+interface Post {
+  title: string;
+  slug: string;
+  excerpt?: string;
+  date?: string;
+}
+const { posts = [] }: { posts?: Post[] } = Astro.props;
+---
+
+<section class="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto mt-8 px-4">
+  {posts.map((post) => (
+    <article class="bg-white/70 dark:bg-black/40 border border-white/20 rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
+      <a href={`/posts/${post.slug}`} class="block">
+        <h2 class="text-lg font-semibold text-black dark:text-white group-hover:text-indigo-500 transition">
+          {post.title}
+        </h2>
+        {post.excerpt && (
+          <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{post.excerpt}</p>
+        )}
+      </a>
+    </article>
+  ))}
+</section>

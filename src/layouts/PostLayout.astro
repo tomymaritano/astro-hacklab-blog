@@ -1,0 +1,14 @@
+---
+interface Post {
+  title: string;
+  excerpt?: string;
+  date?: string;
+}
+const { post, Content } = Astro.props;
+---
+
+<article class="prose dark:prose-invert max-w-2xl mx-auto mt-8 px-4">
+  <h1 class="text-3xl font-bold mb-2">{post.title}</h1>
+  {post.date && <time class="text-sm text-zinc-500 block mb-4">{new Date(post.date).toLocaleDateString()}</time>}
+  <Content />
+</article>
