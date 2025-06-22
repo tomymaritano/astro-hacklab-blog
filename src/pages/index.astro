@@ -1,28 +1,21 @@
 ---
-import "../styles/global.css";
+import '../styles/global.css'
 import Navbar from "../components/Navbar";
+import PostListLayout from "../layouts/PostListLayout.astro";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("posts"); 
+const posts = await getCollection("posts");
 ---
 
 <html lang="en">
-  <body class="bg-white dark:bg-black min-h-screen">
+  <body class="bg-white dark:bg-[#010102] min-h-screen">
     <Navbar client:only="react" />
 
-    <ul class="mt-8 px-4 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-      {posts.map((post) => (
-        <li class="bg-white/70 dark:bg-black/40 border border-white/20 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow group">
-          <a href={`/posts/${post.slug}`} class="block h-full">
-            <h2 class="text-lg font-semibold text-black dark:text-white group-hover:text-indigo-500 transition">
-              {post.data.title}
-            </h2>
-            {post.data.excerpt && (
-              <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{post.data.excerpt}</p>
-            )}
-          </a>
-        </li>
-      ))}
-    </ul>
+    <PostListLayout posts={posts.map((post) => ({
+      title: post.data.title,
+      slug: post.slug,
+      excerpt: post.data.excerpt,
+      date: post.data.date,
+    }))} />
   </body>
 </html>
