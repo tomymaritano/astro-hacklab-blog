@@ -48,7 +48,7 @@ export default function ThemeToggle() {
           className={`absolute w-8 h-8 rounded-full flex items-center justify-center shadow-lg border border-white/20 transition-colors duration-500 ${
             dark
               ? "bg-gray-950"
-              : "bg-gradient-to-br from-indigo-400 to-indigo-500"
+              : "bg-indigo-600"
           }`}
           layout
           whileTap={{ scale: 0.9 }}

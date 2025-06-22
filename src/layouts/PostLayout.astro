@@ -4,6 +4,7 @@ import Header from '../components/Header.astro';
 import Body from '../components/Body.astro';
 import { SITE_TITLE } from '../content/config';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer.astro';
 
 const { post, Content } = Astro.props;
 ---
@@ -30,7 +31,7 @@ const { post, Content } = Astro.props;
         @apply border border-slate-300 dark:border-zinc-700 rounded-xl mb-6;
       }
       article.markdown-body h1 {
-        @apply text-3xl font-bold font-sans mb-4;
+        @apply text-3xl font-bold  mb-4;
       }
       article.markdown-body h2 {
         @apply text-2xl font-bold mt-8 mb-2;
@@ -39,7 +40,7 @@ const { post, Content } = Astro.props;
         @apply mb-4 leading-relaxed;
       }
       article.markdown-body a {
-        @apply underline decoration-orange-500 hover:text-orange-500;
+        @apply underline decoration-indigo-500 hover:text-indigo-500;
       }
     </style>
 
@@ -71,4 +72,5 @@ const { post, Content } = Astro.props;
       </article>
     </main>
   </Body>
+  <Footer />
 </html>

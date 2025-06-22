@@ -54,7 +54,7 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
   return (
     <>
       <button
-        className="text-black dark:text-white hover:text-indigo-500 transition"
+        className="inline-flex items-center space-x-2 text-black dark:text-white hover:text-indigo-500 transition"
         onClick={() => {
           setOpen(true);
           setTimeout(() => inputRef.current?.focus(), 50);
@@ -63,6 +63,7 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
         title="Cmd + K"
       >
         <Search size={20} />
+        <span>Search</span>
       </button>
 
       <AnimatePresence>
