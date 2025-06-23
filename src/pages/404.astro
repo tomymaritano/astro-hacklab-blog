@@ -4,7 +4,7 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../content/config'
 import Body from '../components/Body.astro'
-import { IoArrowForward, IoChevronForward } from 'react-icons/io5'
+import { IoChevronForward } from 'react-icons/io5'
 import ContentLayout from '../components/ContentLayout.astro'
 ---
 
@@ -14,7 +14,11 @@ import ContentLayout from '../components/ContentLayout.astro'
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <Body>
-    <Header title={SITE_TITLE} />
+    <Header
+      title="What I thought"
+      subtitle="DEV, PRODUCT & MUCH MORE."
+      videoUrl="./background.mp4"
+    />
     <main class="pt-[56px]">
       <ContentLayout>
         <section>
@@ -23,7 +27,7 @@ import ContentLayout from '../components/ContentLayout.astro'
           </h1>
           <div class="text-center py-4">
             <a
-              class="inline-flex items-center gap-1 underline underline-offset-2 decoration-orange-500"
+              class="inline-flex items-center gap-1 underline underline-offset-2 decoration-indigo-500"
               href="/"
               >Go to Index <IoChevronForward />
             </a>
