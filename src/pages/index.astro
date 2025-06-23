@@ -15,12 +15,12 @@ const posts = await getCollection("posts");
   <head>
     <title>HackLab — Posts</title>
     <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body
     class="bg-white dark:bg-[#0B0B0B] min-h-screen flex flex-col text-black dark:text-white"
   >
-    <Navbar client:only="react" posts={post.data.posts ?? []} />
+    <Navbar client:only="react" posts={posts} />
 
     <Header
       title="What I thought"
