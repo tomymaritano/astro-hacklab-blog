@@ -2,7 +2,7 @@
 const { title = "HackLab", subtitle = "Explorando desarrollo web, UI y más.", videoUrl } = Astro.props;
 ---
 
-<header class="relative w-full h-[40vh] min-h-[300px] flex items-center justify-center text-center overflow-hidden border-b border-white/10 dark:border-white/10">
+<header class="relative w-full h-[45vh] min-h-[300px] flex items-center justify-center text-center overflow-hidden border-b border-white/10 dark:border-white/10">
   <!-- Video de fondo -->
   <video
     src={videoUrl}
@@ -17,7 +17,7 @@ const { title = "HackLab", subtitle = "Explorando desarrollo web, UI y más.", v
   <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
 
   <!-- Contenido del header -->
-  <div class="relative z-10 px-4 animate-fade-in">
+  <div class="relative z-10 px-4 pt-14 animate-fade-in">
     <h1 class="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-2">
       {title}
     </h1>
