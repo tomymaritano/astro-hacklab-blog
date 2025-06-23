@@ -1,6 +1,6 @@
 ---
 title: "My Journey: From Coding at Home to Creating on My Own Terms"
-date: "2025-06-02"
+date: "2025-04-01"
 excerpt: "I’m Tomy, a developer and product engineer who has made flexibility, minimalism, and thoughtful work my way of life."
 coverImage: "/images/myjourney.jpg"
 ---
