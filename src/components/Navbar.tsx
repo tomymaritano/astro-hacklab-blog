@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { FaGithub } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchSpotlight from "./SearchSpotlight";
 import ThemeToggle from "./ThemeToggle";
@@ -66,6 +67,15 @@ export default function Navbar({ posts }: NavbarProps) {
 
           {/* Desktop tools */}
           <div className="hidden md:flex items-center space-x-4">
+            <a
+              href="https://github.com/tu-usuario"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-black dark:text-white hover:text-indigo-500 transition"
+              aria-label="GitHub"
+            >
+              <FaGithub size={24} />
+            </a>
             <SearchSpotlight posts={posts.map((post) => ({ title: post.data.title, slug: post.slug }))} />
             <ThemeToggle />
           </div>
@@ -113,6 +123,15 @@ export default function Navbar({ posts }: NavbarProps) {
               <div className="w-24 border-t border-white/20" />
 
               <div className="flex flex-col items-center space-y-6 mt-6">
+                <a
+                  href="https://github.com/tu-usuario"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-black dark:text-white hover:text-indigo-500 transition"
+                  aria-label="GitHub"
+                >
+                  <FaGithub size={24} />
+                </a>
                 <SearchSpotlight posts={posts.map((post) => ({ title: post.data.title, slug: post.slug }))} />
                 <ThemeToggle />
               </div>

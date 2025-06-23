@@ -1,58 +1,56 @@
 ---
-title: "Mi historia: de programar en casa a trabajar remoto desde cualquier lugar"
-date: "2025-06-2"
-excerpt: "Soy Tomy, un Product Engineer apasionado por el código, el minimalismo japonés y la libertad de trabajar desde donde sea."
-coverImage: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+title: "My Journey: From Coding at Home to Creating on My Own Terms"
+date: "2025-06-02"
+excerpt: "I’m Tomy, a developer and product engineer who has made flexibility, minimalism, and thoughtful work my way of life."
+coverImage: "/images/myjourney.jpg"
 ---
 
-# Mi historia: de programar en casa a trabajar remoto desde cualquier lugar
 
-Soy **Tomy**, un desarrollador y product engineer que ha hecho del viaje, el minimalismo y el trabajo bien hecho su forma de vivir.
 
-## Cómo empezó todo
 
-Mi historia con la tecnología arrancó desde muy chico, cuando me encontré frente a mi primera computadora y entendí que podía hacer mucho más que solo consumir contenido. Podía **crearlo**.
 
-Empecé desarmando programas, entendiendo qué hacía que funcionaran, y escribiendo mis primeras líneas de código. No pensaba que fuera una carrera, solo quería resolver cosas que me interesaban. Fue ahí cuando entendí que programar es una herramienta para convertir ideas en realidad.
+## How It All Started
 
-## La búsqueda de la libertad
+My story with technology began when I was a kid, sitting in front of my first computer and realizing that I could do much more than just consume content — I could **create**.
 
-Cuando empecé a trabajar en proyectos propios y para empresas, sentí que quería algo más que un horario fijo y una oficina tradicional. Para mí, la libertad es tan importante como el trabajo bien hecho, y eso me llevó a convertirme en **nómada digital**.
+I started by tinkering with software, seeing what made it tick, and writing my first lines of code. Back then, I didn’t see it as a career — I was just curious and loved the feeling of making something real. That’s when I discovered that programming is a powerful tool for turning ideas into reality.
 
-Desde entonces, trabajo desde mi casa, desde cafés en cualquier ciudad, o desde algún punto perdido del mapa. Mi laptop es mi estudio, mi oficina y mi laboratorio. Eso me enseñó a adaptarme rápido, a comunicarme bien y a mantener la calidad sin importar dónde esté.
+## The Pursuit of Freedom
+
+When I started working on my own projects and with companies, I quickly realized I wanted more than a fixed schedule and a traditional office. To me, freedom means having control over my time, my environment, and the way I work.
+
+That mindset led me to choose projects and collaborations that allow me to focus, be productive, and do my best work — whether that’s in my home office, a café, or anywhere that keeps me inspired. My laptop is my studio and my toolbox, and I’ve learned to adapt to different setups without losing sight of quality.
 
 ![My workspace on the go](https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 
+## The Influence of Minimalism and Japanese Aesthetics
 
+In my work as a programmer and designer, I draw a lot of inspiration from Japanese aesthetics and their appreciation for well-thought-out details. I aim for everything to be simple, purposeful, and functional. To me, beauty lies in making something as straightforward as it can be — nothing less, nothing more.
 
-## La influencia del minimalismo y la estética japonesa
+Applying this concept to my projects allows me to focus on solving real problems, removing distractions, and putting the user experience above all else. Every product I build is a mix of creativity and technology, pragmatism and design.
 
-En mi trabajo como programador y diseñador, me inspira mucho la estética japonesa y su amor por los detalles bien pensados. Busco que todo sea simple, que tenga un propósito y que sea funcional. Para mí, la belleza está en que algo sea sencillo y que haga exactamente lo que tiene que hacer — nada menos, nada más.
+## My Work and My Purpose
 
-Aplicar este concepto a mis proyectos me ha permitido concentrarme en resolver problemas reales, eliminando el ruido que distrae y poniendo la experiencia del usuario por encima de todo. Cada producto que creo es una mezcla entre creatividad y tecnología, entre pragmatismo y estética.
+Today I work as a **Product Engineer**, and my role is a combination of coding, researching, iterating, testing — and most importantly — listening. I enjoy being part of teams that value quality, clear communication, and the pursuit of the best version of what we do.
 
-## Mi trabajo y mi propósito
+Whether I’m building a web app from scratch, contributing to a UX overhaul, or shipping new features that improve a product, I always keep one question in mind:  
+> How do we make this better for the people who use it?
 
-Hoy me desempeño como **Product Engineer**, y mi trabajo es una combinación entre programar, investigar, iterar, probar y — sobre todo — escuchar. Disfruto ser parte de equipos que valoran la calidad, la comunicación abierta y la búsqueda de la mejor versión posible.
+When I work with clients or startups, my goal is for things to be **clear and well-crafted**. I want every delivery to be solid, easy to understand, and to truly solve problems — not just add more code.
 
-Ya sea que esté armando una aplicación web desde cero, participando en un rediseño UX o sumando funcionalidades que mejoren un producto, siempre tengo en la cabeza la misma pregunta:  
-> ¿Cómo logramos que esto sea mejor para las personas que lo usan?
+## What I’ve Learned Along the Way
 
-Cuando trabajo con clientes o startups, mi objetivo es que las cosas sean **claras y bien hechas**. Me gusta que cada entrega sea sólida, entendible y que ayude a resolver problemas, no solo a acumular líneas de código.
+- **Quality beats quantity.** A well-thought-out product is far more powerful than ten rushed ones.
+- **Listening is key.** Before writing code or designing, you need to understand what people are trying to achieve.
+- **Simplicity is hard to achieve — but it’s worth it.** Removing the unnecessary is the most difficult part of the process.
+- **Adaptability is part of the game.** Staying flexible in different environments keeps me sharp and responsive.
+- **Never stop learning.** Tech changes every day — and that’s the best part.
 
-## Lo que aprendí en el camino
+## What’s Next
 
-- **La calidad es mejor que la cantidad.** Un producto bien pensado y hecho es mucho más poderoso que diez a medias.
-- **Escuchar es clave.** Antes de programar o diseñar, hay que comprender qué quiere lograr el usuario.
-- **La sencillez es difícil de lograr, pero vale la pena.** Quitar lo innecesario es el trabajo más difícil.
-- **La adaptabilidad es parte del juego.** Trabajar remoto y viajar me enseñó que cada situación es única y que hay que saber ajustarse rápido sin perder los estándares.
-- **Nunca se deja de aprender.** La tecnología cambia todos los días, y esa es la mejor parte.
+I’m still learning, exploring new languages, new projects, and new places that inspire me. What never changes is my drive to build things that matter — things that are beautiful, useful, and built to last.
 
-## Lo que viene ahora
-
-Hoy sigo aprendiendo, explorando nuevos lenguajes, nuevos proyectos y nuevos destinos. Lo que nunca cambia es mi búsqueda por crear cosas que sirvan, que sean bellas y que duren.
-
-Si leíste hasta acá, gracias por acompañarme. Espero que mi historia te sirva de inspiración para que también vos te animes a vivir a tu manera y a crear con propósito.
+If you’ve read this far, thank you for joining me. I hope my story encourages you to live and work in your own way — and to create with purpose.
 
 ![My workspace on the go](https://images.unsplash.com/photo-1690228254548-31ef53e40cd1?q=80&w=1142&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)
 

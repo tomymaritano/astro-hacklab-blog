@@ -62,8 +62,7 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
         aria-label="Search posts"
         title="Cmd + K"
       >
-        <Search size={20} />
-        <span>Search</span>
+        <Search size={24} />
       </button>
 
       <AnimatePresence>
