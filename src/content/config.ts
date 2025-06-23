@@ -11,6 +11,6 @@ const posts = defineCollection({
 });
 
 export const collections = { posts };
-export const SITE_TITLE = 'Tomy Maritano’s Idea Forge';
-export const SITE_DESCRIPTION = 'Exploring thoughts, code, and curiosity—one post at a time.';
+export const SITE_TITLE = 'A Developer’s Journal';
+export const SITE_DESCRIPTION = 'Notes on building, learning, and shipping meaningful products.';
 export const HOMEPAGE_URL = 'https://bio.hacklab.dog/';

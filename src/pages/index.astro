@@ -6,6 +6,7 @@ import PostGrid from "../components/PostGrid.astro";
 import ContentLayout from "../components/ContentLayout.astro";
 import { getCollection } from "astro:content";
 import Footer from "../components/Footer.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../content/config";
 
 const posts = await getCollection("posts");
 ---
@@ -23,8 +24,8 @@ const posts = await getCollection("posts");
     <Navbar client:only="react" posts={posts} />
 
     <Header
-      title="What I thought"
-      subtitle="DEV, PRODUCT & MUCH MORE."
+      title={SITE_TITLE}
+      subtitle={SITE_DESCRIPTION}
       videoUrl="./background.mp4"
     />
 
