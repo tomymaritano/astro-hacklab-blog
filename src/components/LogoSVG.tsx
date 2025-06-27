@@ -11,7 +11,7 @@ export default function LogoSVG() {
       transition={{ type: 'spring', stiffness: 200, damping: 10 }}
       style={{ fontFamily: "'M PLUS Rounded 1c', sans-serif" }}
     >
-      @hacklabdog
+      Tomy Maritano
     </motion.a>
   );
 }
