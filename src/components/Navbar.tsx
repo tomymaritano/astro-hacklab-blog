@@ -8,7 +8,7 @@ import SearchSpotlight from "./SearchSpotlight";
 import ThemeToggle from "./ThemeToggle";
 import LogoSVG from "./LogoSVG";
 
-const links = [{ href: "/", label: "Home" }];
+const links = [{ href: "/", label: "" }];
 
 interface NavbarProps {
   posts: { slug: string; data: { title: string } }[];

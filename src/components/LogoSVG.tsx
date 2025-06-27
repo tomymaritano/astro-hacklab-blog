@@ -1,18 +1,17 @@
-// LogoSVG.tsx
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export default function LogoSVG() {
   return (
     <motion.a
       href="/"
-      className="text-xl font-extrabold text-black dark:text-white"
+      className="text-lg font-bold text-black dark:text-white"
       whileHover={{ scale: 1.1, rotate: 5 }}
-      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+      transition={{ type: 'spring', stiffness: 200, damping: 10 }}
+      style={{ fontFamily: "'M PLUS Rounded 1c', sans-serif" }}
     >
-
-      {/* Podés poner aquí un <svg> custom. Por ahora es solo texto */}
+      @hacklabdog
     </motion.a>
   );
 }
