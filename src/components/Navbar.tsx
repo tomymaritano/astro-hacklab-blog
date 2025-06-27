@@ -8,6 +8,7 @@ import SearchSpotlight from "./SearchSpotlight";
 import ThemeToggle from "./ThemeToggle";
 import LogoSVG from "./LogoSVG";
 
+
 const links = [{ href: "/", label: "" }];
 
 interface NavbarProps {
@@ -50,7 +51,6 @@ export default function Navbar({ posts }: NavbarProps) {
       >
         <div className="max-w-3xl mx-auto h-full px-4 sm:px-6 flex justify-between items-center">
           <LogoSVG />
-
           {/* Desktop */}
           <nav className="hidden md:flex flex-1 justify-center space-x-8 text-md font-medium">
             {links.map(({ href, label }) => (
