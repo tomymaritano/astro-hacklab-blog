@@ -140,6 +140,11 @@ export default function Navbar({ posts, currentLang = 'en', currentPath = '/' }:
                 <SearchSpotlight
                   posts={posts.map(post => ({ title: post.data.title, slug: post.slug }))}
                 />
+                <LanguageSwitcher
+                  currentLang={currentLang as any}
+                  currentPath={currentPath}
+                  isMobile={true}
+                />
                 <ThemeToggle />
               </div>
             </motion.nav>
