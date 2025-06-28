@@ -101,6 +101,7 @@ export default [
       'dist/**',
       'node_modules/**',
       '.astro/**',
+      '.vercel/**',
       'coverage/**',
       '*.config.js',
       '*.config.ts',

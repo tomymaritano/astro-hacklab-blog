@@ -5,13 +5,7 @@ interface Props extends SEOData {
   canonical?: string;
 }
 
-const { 
-  title, 
-  description, 
-  canonical, 
-  openGraph, 
-  twitter 
-} = Astro.props;
+const { title, description, canonical, openGraph, twitter } = Astro.props;
 
 const canonicalURL = canonical || new URL(Astro.url.pathname, Astro.site).toString();
 const ogImage = openGraph?.image || '/images/og-default.jpg';
@@ -39,11 +33,17 @@ const ogImage = openGraph?.image || '/images/og-default.jpg';
 <meta property="twitter:url" content={canonicalURL} />
 <meta property="twitter:title" content={twitter?.title || title} />
 <meta property="twitter:description" content={twitter?.description || description} />
-<meta property="twitter:image" content={new URL(twitter?.image || ogImage, Astro.site).toString()} />
+<meta
+  property="twitter:image"
+  content={new URL(twitter?.image || ogImage, Astro.site).toString()}
+/>
 
 <!-- Additional SEO -->
 <meta name="robots" content="index, follow" />
-<meta name="googlebot" content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1" />
+<meta
+  name="googlebot"
+  content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+/>
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -52,17 +52,19 @@ const ogImage = openGraph?.image || '/images/og-default.jpg';
 <link rel="sitemap" href="/sitemap-index.xml" />
 
 <!-- JSON-LD Structured Data -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": title,
-  "description": description,
-  "url": canonicalURL,
-  "image": new URL(ogImage, Astro.site).toString(),
-  "author": {
-    "@type": "Person",
-    "name": "HackLab Developer"
-  }
-}
-</script>
+<script
+  type="application/ld+json"
+  is:inline
+  set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: title,
+    description: description,
+    url: canonicalURL,
+    image: new URL(ogImage, Astro.site).toString(),
+    author: {
+      '@type': 'Person',
+      name: 'HackLab Developer',
+    },
+  })}
+/>

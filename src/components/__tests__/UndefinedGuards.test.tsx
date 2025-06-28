@@ -62,7 +62,7 @@ describe('Undefined Guards', () => {
   describe('SearchSpotlight', () => {
     it('handles undefined posts gracefully', () => {
       render(<SearchSpotlight posts={undefined as any} />);
-      
+
       // Should still render the search button
       expect(screen.getByRole('button')).toBeInTheDocument();
     });
@@ -82,24 +82,12 @@ describe('Undefined Guards', () => {
 
   describe('GenericBarChart', () => {
     it('handles undefined data gracefully', () => {
-      render(
-        <GenericBarChart
-          data={undefined as any}
-          indexBy="method"
-          keys={['value']}
-        />
-      );
+      render(<GenericBarChart data={undefined as any} indexBy="method" keys={['value']} />);
       expect(screen.getByText('No data available')).toBeInTheDocument();
     });
 
     it('handles empty data array', () => {
-      render(
-        <GenericBarChart
-          data={[]}
-          indexBy="method"
-          keys={['value']}
-        />
-      );
+      render(<GenericBarChart data={[]} indexBy="method" keys={['value']} />);
       expect(screen.getByText('No data available')).toBeInTheDocument();
     });
 
@@ -115,13 +103,7 @@ describe('Undefined Guards', () => {
     });
 
     it('handles empty keys array', () => {
-      render(
-        <GenericBarChart
-          data={[{ method: 'test', value: 1 }]}
-          indexBy="method"
-          keys={[]}
-        />
-      );
+      render(<GenericBarChart data={[{ method: 'test', value: 1 }]} indexBy="method" keys={[]} />);
       expect(screen.getByText('No chart keys defined')).toBeInTheDocument();
     });
   });

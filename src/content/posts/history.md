@@ -1,13 +1,9 @@
 ---
-title: "My Journey: From Coding at Home to Creating on My Own Terms"
-date: "2025-04-01"
-excerpt: "I’m Tomy, a developer and product engineer who has made flexibility, minimalism, and thoughtful work my way of life."
-coverImage: "/images/myjourney.jpg"
+title: 'My Journey: From Coding at Home to Creating on My Own Terms'
+date: '2025-04-01'
+excerpt: 'I’m Tomy, a developer and product engineer who has made flexibility, minimalism, and thoughtful work my way of life.'
+coverImage: '/images/myjourney.jpg'
 ---
-
-
-
-
 
 ## How It All Started
 
@@ -33,7 +29,8 @@ Applying this concept to my projects allows me to focus on solving real problems
 
 Today I work as a **Product Engineer**, and my role is a combination of coding, researching, iterating, testing — and most importantly — listening. I enjoy being part of teams that value quality, clear communication, and the pursuit of the best version of what we do.
 
-Whether I’m building a web app from scratch, contributing to a UX overhaul, or shipping new features that improve a product, I always keep one question in mind:  
+Whether I’m building a web app from scratch, contributing to a UX overhaul, or shipping new features that improve a product, I always keep one question in mind:
+
 > How do we make this better for the people who use it?
 
 When I work with clients or startups, my goal is for things to be **clear and well-crafted**. I want every delivery to be solid, easy to understand, and to truly solve problems — not just add more code.

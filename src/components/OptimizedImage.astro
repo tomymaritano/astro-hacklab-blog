@@ -12,15 +12,15 @@ interface Props {
   format?: 'webp' | 'avif' | 'png' | 'jpg';
 }
 
-const { 
-  src, 
-  alt, 
-  width = 800, 
-  height = 400, 
-  class: className = '', 
+const {
+  src,
+  alt,
+  width = 800,
+  height = 400,
+  class: className = '',
   loading = 'lazy',
   quality = 80,
-  format = 'webp'
+  format = 'webp',
 } = Astro.props;
 ---
 

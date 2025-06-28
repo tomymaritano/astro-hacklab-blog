@@ -1,6 +1,6 @@
 ---
-import { getCollection, render } from "astro:content";
-import PostLayout from "../../layouts/PostLayout.astro";
+import { getCollection, render } from 'astro:content';
+import PostLayout from '../../layouts/PostLayout.astro';
 
 export const prerender = true;
 
@@ -8,7 +8,7 @@ export async function getStaticPaths() {
   const posts = await getCollection('posts');
   return posts
     .filter(post => post && post.slug) // Filter out undefined posts
-    .map((post) => ({ params: { slug: post.slug }, props: { post } }));
+    .map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
 
 const { post } = Astro.props;

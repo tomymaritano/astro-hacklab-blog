@@ -9,7 +9,7 @@ import Footer from '../components/Footer.astro';
 const { post, Content } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead
@@ -46,27 +46,33 @@ const { post, Content } = Astro.props;
 
     <main class="pt-[56px]">
       <article class="markdown-body">
-        {post.data.coverImage && (
-          <img
-            class="mb-6"
-            width={720}
-            height={360}
-            src={post.data.coverImage}
-            alt={post.data.title}
-          />
-        )}
+        {
+          post.data.coverImage && (
+            <img
+              class="mb-6"
+              width={720}
+              height={360}
+              src={post.data.coverImage}
+              alt={post.data.title}
+            />
+          )
+        }
 
         <h1>{post.data.title}</h1>
 
-        {post.data.excerpt && (
-          <p class="text-zinc-600 dark:text-zinc-400 mb-2 italic">{post.data.excerpt}</p>
-        )}
+        {
+          post.data.excerpt && (
+            <p class="text-zinc-600 dark:text-zinc-400 mb-2 italic">{post.data.excerpt}</p>
+          )
+        }
 
-        {post.data.date && (
-          <time class="text-xs text-zinc-500 dark:text-zinc-500 mb-6 block">
-            📅 {new Date(post.data.date).toLocaleDateString()}
-          </time>
-        )}
+        {
+          post.data.date && (
+            <time class="text-xs text-zinc-500 dark:text-zinc-500 mb-6 block">
+              📅 {new Date(post.data.date).toLocaleDateString()}
+            </time>
+          )
+        }
 
         <Content />
       </article>

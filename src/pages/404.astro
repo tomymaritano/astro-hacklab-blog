@@ -1,14 +1,14 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../content/config'
-import Body from '../components/Body.astro'
-import { IoChevronForward } from 'react-icons/io5'
-import ContentLayout from '../components/ContentLayout.astro'
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../content/config';
+import Body from '../components/Body.astro';
+import { IoChevronForward } from 'react-icons/io5';
+import ContentLayout from '../components/ContentLayout.astro';
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
@@ -22,9 +22,7 @@ import ContentLayout from '../components/ContentLayout.astro'
     <main class="pt-[56px]">
       <ContentLayout>
         <section>
-          <h1 class="text-3xl text-center font-mplus mt-12 mb-8">
-            Oops, not found
-          </h1>
+          <h1 class="text-3xl text-center font-mplus mt-12 mb-8">Oops, not found</h1>
           <div class="text-center py-4">
             <a
               class="inline-flex items-center gap-1 underline underline-offset-2 decoration-indigo-500"
@@ -33,7 +31,7 @@ import ContentLayout from '../components/ContentLayout.astro'
             </a>
           </div>
         </section>
-      </ContentLay>
+      </ContentLayout>
     </main>
     <Footer />
   </Body>

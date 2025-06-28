@@ -22,6 +22,17 @@ export default defineConfig({
         '@/components': '/src/components',
       },
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'charts': ['@nivo/bar', '@nivo/core'],
+            'icons': ['lucide-react'],
+            'react-vendor': ['react', 'react-dom'],
+          }
+        }
+      }
+    }
   },
   output: 'static',
   adapter: vercel({

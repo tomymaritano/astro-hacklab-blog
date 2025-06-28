@@ -1,8 +1,8 @@
 ---
-title: "How I Built My Blog with Astro: My Step-by-Step Process"
-date: "2025-06-02"
-excerpt: "Here’s the full story of how I rebuilt my blog with Astro — including all the tools, NPM packages, and lessons learned along the way."
-coverImage: "/images/astro.jpg"
+title: 'How I Built My Blog with Astro: My Step-by-Step Process'
+date: '2025-06-02'
+excerpt: 'Here’s the full story of how I rebuilt my blog with Astro — including all the tools, NPM packages, and lessons learned along the way.'
+coverImage: '/images/astro.jpg'
 ---
 
 I recently rebuilt my personal blog using **[Astro](https://astro.build)**, and I want to share the whole process — from the first `npx create astro@latest` to the NPM packages and components that make it work.
@@ -15,10 +15,10 @@ If you’re looking to do something similar, I hope this guide gives you a clear
 
 When I decided to redo my blog, my goals were clear:
 
--  **Fast and lightweight**
--  **Focus on writing content**
--  **No complicated CMS — just Markdown files**
--  **Easy to host, scale, and maintain**
+- **Fast and lightweight**
+- **Focus on writing content**
+- **No complicated CMS — just Markdown files**
+- **Easy to host, scale, and maintain**
 
 That’s why I picked **Astro** — it’s perfect for this kind of project.
 
@@ -42,7 +42,7 @@ No custom CSS boilerplate, just utility classes and I can focus on layout withou
 
 ## NPM Packages I Installed
 
-``` bash
+```bash
 astro — Core framework.
 @astrojs/tailwind — Easy utility-first styles.
 @astrojs/mdx — Support for writing posts and components in MDX.
@@ -53,7 +53,9 @@ astrojs/image — Optimized image handling`
 
 npm install @astrojs/mdx @astrojs/rss date-fns recharts
 ```
+
 ## ✍️ Writing Content
+
 Astro makes content super easy. I just drop .md or .mdx files into src/content/posts.
 Each file looks like this:
 
@@ -73,11 +75,12 @@ Your markdown content goes here.
 
 With Tailwind set up, customizing the UI was painless.
 Here’s my typical style process:
+
 - Define layout in components (Header.astro, Footer.astro)
 - Use Tailwind utility classes directly (class="text-center text-xl mt-8")
 - Keep a globals.css for any global tweaks.
 
-##  What I Learned
+## What I Learned
 
 - Astro’s island architecture really pays off — my blog loads instantly and doesn’t ship any JS I don’t need.
 - Setting up Tailwind saved me hours of writing custom CSS.

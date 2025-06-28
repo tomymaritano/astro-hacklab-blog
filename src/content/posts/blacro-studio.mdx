@@ -1,8 +1,8 @@
 ---
-title: "How I Built the Blacro Studio Website with Next.js, Tailwind CSS & Framer Motion"
-date: "2025-06-24"
-excerpt: "Here’s the process of creating a minimalist, animated site for Blacro Studio — a creative agency — using Next.js, Tailwind CSS, and Framer Motion."
-coverImage: "/images/blacro-studio.jpg"
+title: 'How I Built the Blacro Studio Website with Next.js, Tailwind CSS & Framer Motion'
+date: '2025-06-24'
+excerpt: 'Here’s the process of creating a minimalist, animated site for Blacro Studio — a creative agency — using Next.js, Tailwind CSS, and Framer Motion.'
+coverImage: '/images/blacro-studio.jpg'
 ---
 
 When the team at **Blacro Studio** reached out, I knew this was going to be more than just another website. They had a strong creative identity already — my job was to translate that into a smooth, high-performance web experience.
@@ -34,6 +34,7 @@ And then I configured `tailwind.config.js` and added my global styles.
 
 Blacro Studio had its branding and assets ready.  
 I split the UI into small pieces:
+
 - `Header.jsx` — bold title section
 - `AboutSection.jsx` — company story with animated text
 - `ProjectCardCarousel.jsx` — marquee-style project carousel
@@ -45,6 +46,7 @@ Each component was built using utility-first Tailwind classes to keep everything
 ### 3. Added smooth animations with Framer Motion
 
 To add life to the UI:
+
 - Wrapped key sections with `motion.div` for fade-ins on scroll.
 - Added scale and opacity animations to links and images on hover.
 - Built an infinite marquee for the project carousel.
@@ -52,6 +54,7 @@ To add life to the UI:
 ### 4. Images and responsiveness
 
 With `next/image`:
+
 - Defined `sizes` and `fill` for responsive images.
 - Kept the layout stable across all devices.
 - Compressed images for faster load times without losing quality.
@@ -59,6 +62,7 @@ With `next/image`:
 ### 5. Backend & contact form
 
 Created a simple `POST /api/contact` endpoint:
+
 - Validated inputs with **Zod**.
 - Sent emails with **Nodemailer**.
 - Added basic feedback messages for successful and failed submissions.
