@@ -3,7 +3,7 @@ import 'kleur/colors';
 /* empty css                                  */
 import { $ as $$Header, a as $$ContentLayout } from '../chunks/ContentLayout_BzQg6dRC.mjs';
 import 'clsx';
-import { g as getCollection, $ as $$Footer, S as SITE_DESCRIPTION, a as SITE_TITLE } from '../chunks/Footer_DYj5tayY.mjs';
+import { g as getCollection, $ as $$Footer, S as SITE_DESCRIPTION, a as SITE_TITLE } from '../chunks/Footer_4ipH5Qsw.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro = createAstro();

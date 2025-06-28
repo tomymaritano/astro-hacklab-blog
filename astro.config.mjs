@@ -28,5 +28,7 @@ export default defineConfig({
     webAnalytics: {
       enabled: true, // set to false when using @vercel/analytics@1.4.0
     },
+    functionPerRoute: false,
+    runtime: 'nodejs20.x',
   }),
 });

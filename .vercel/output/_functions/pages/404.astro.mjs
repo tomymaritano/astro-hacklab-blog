@@ -2,7 +2,7 @@ import { a as createComponent, r as renderComponent, b as renderHead, d as rende
 import 'kleur/colors';
 import { $ as $$BaseHead, a as $$Body } from '../chunks/Body_DC24SEGF.mjs';
 import { $ as $$Header, a as $$ContentLayout } from '../chunks/ContentLayout_BzQg6dRC.mjs';
-import { S as SITE_DESCRIPTION, a as SITE_TITLE, $ as $$Footer } from '../chunks/Footer_DYj5tayY.mjs';
+import { S as SITE_DESCRIPTION, a as SITE_TITLE, $ as $$Footer } from '../chunks/Footer_4ipH5Qsw.mjs';
 import { IoChevronForward } from 'react-icons/io5';
 export { renderers } from '../renderers.mjs';
 

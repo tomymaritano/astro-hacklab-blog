@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.10.0"><!-- Primary Meta Tags --><title>How I Built My Link-in-Bio with Vite, React &amp; Framer Motion / A Developer’s Journal</title><meta name="title" content="How I Built My Link-in-Bio with Vite, React &#38; Framer Motion / A Developer’s Journal"><meta name="description" content="Here’s the process of creating my animated link-in-bio using Vite, React, Tailwind CSS, and Framer Motion."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/posts/link-bio/"><meta property="og:title" content="How I Built My Link-in-Bio with Vite, React &#38; Framer Motion / A Developer’s Journal"><meta property="og:description" content="Here’s the process of creating my animated link-in-bio using Vite, React, Tailwind CSS, and Framer Motion."><meta property="og:image" content="http://localhost:4321/images/vite.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/posts/link-bio/"><meta property="twitter:title" content="How I Built My Link-in-Bio with Vite, React &#38; Framer Motion / A Developer’s Journal"><meta property="twitter:description" content="Here’s the process of creating my animated link-in-bio using Vite, React, Tailwind CSS, and Framer Motion."><meta property="twitter:image" content="http://localhost:4321/images/vite.png"><script>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })()
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
+  }
+</script><link rel="stylesheet" href="/_astro/_slug_.VMP-7kEU.css">
+<link rel="stylesheet" href="/_astro/_slug_.C8zOYmk1.css"><script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		var script = document.createElement('script');
+		script.defer = true;
+		script.src = '/_vercel/insights/script.js';
+		var head = document.querySelector('head');
+		head.appendChild(script);
+	</script></head> <body class="bg-indigo-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-300 break-words leading-6 transition-colors duration-500"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZMiVj7" component-url="/_astro/Navbar.hqotd-9u.js" component-export="default" renderer-url="/_astro/client.DDo7MzBH.js" props="{&quot;posts&quot;:[1,[]]}" ssr client="only" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island>  <main class="pt-[56px]"> <article class="markdown-body"> <img class="mb-6" width="720" height="360" src="/images/vite.png" alt="How I Built My Link-in-Bio with Vite, React &#38; Framer Motion"> <h1>How I Built My Link-in-Bio with Vite, React &amp; Framer Motion</h1> <p class="text-zinc-600 dark:text-zinc-400 mb-2 italic">Here’s the process of creating my animated link-in-bio using Vite, React, Tailwind CSS, and Framer Motion.</p> <time class="text-xs text-zinc-500 dark:text-zinc-500 mb-6 block">
+📅 6/1/2025 </time> <p>I wanted a <strong>minimal, animated link-in-bio</strong> that I could easily host and update myself — without relying on third-party services.</p>
+<p>Here’s my process, tools, and what I learned along the way.</p>
+<hr/>
+<p><img src="/bio.jpg" alt="My workspace on the go"/></p>
+<h2 id="how-i-built-it--step-by-step">How I Built It — Step by Step</h2>
+<p>Here’s the <strong>exact process</strong> I followed to build this link-in-bio page:</p>
+<h3 id="1--installed-the-environment">1.  Installed the environment</h3>
+<p>First, I set up a new Vite + React project:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> vite@latest</span><span style="color:#9ECBFF"> link-in-bio</span><span style="color:#79B8FF"> --</span><span style="color:#79B8FF"> --template</span><span style="color:#9ECBFF"> react</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> link-in-bio</span></span></code></pre>
+<p>Then added my main dependencies:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8;overflow-x:auto" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> tailwindcss</span><span style="color:#9ECBFF"> postcss</span><span style="color:#9ECBFF"> autoprefixer</span><span style="color:#9ECBFF"> framer-motion</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> tailwindcss</span><span style="color:#9ECBFF"> init</span><span style="color:#79B8FF"> -p</span></span></code></pre>
+<p>And configured Tailwind in tailwind.config.js + index.css.</p>
+<h3 id="2-created-the-core-components">2. Created the core components</h3>
+<p>Next, I broke the UI into small pieces:</p>
+<ul>
+<li>ProfileImage.jsx — top image + profile info.</li>
+<li>LinkButton.jsx — each animated link.</li>
+<li>SocialLinks.jsx — optional social icon row.</li>
+</ul>
+<p>Each component was styled with Tailwind utility classes.</p>
+<h3 id="3-integrated-animations-with-framer-motion">3. Integrated animations with Framer Motion</h3>
+<p>I used Framer Motion for smooth interactions:
+•	Added motion.a to each link so they scale on hover.
+•	Wrapped the entire layout in a motion.div to add a fade-in on page load.</p>
+<h3 id="4-added-a-dark-mode-toggle">4. Added a Dark Mode Toggle</h3>
+<p>I created a simple ToggleDarkMode.jsx:</p>
+<ul>
+<li>Uses a state hook (useState) to switch between dark and light.</li>
+<li>Toggles a class on html or body so Tailwind’s dark: variants kick in.</li>
+<li>Wrapped the entire app in a parent div that smoothly transitions its background color using a Tailwind class like transition-colors duration-500.</li>
+</ul>
+<p>Wrapped everything for a subtle effect</p>
+<h3 id="finally-i-wrapped-the-main-layout-in-a-motiondiv-so-that">Finally, I wrapped the main layout in a motion.div so that:</h3>
+<ul>
+<li>On page mount, opacity animates in.</li>
+<li>On theme toggle, a scale or opacity change adds a gentle transition.</li>
+</ul>
+<p>This subtle polish made the app feel more dynamic and fun to use.</p>
+<hr/>
+<h2 id="why-i-built-it-myself">Why I Built It Myself</h2>
+<p>Most link-in-bio tools look the same and charge a subscription.<br/>
+I decided to build my own because:</p>
+<ul>
+<li>️ <strong>Full control</strong> — Content, style, hosting, data.</li>
+<li><strong>Performance</strong> — Minimal footprint and blazing fast.</li>
+<li><strong>Custom animations</strong> — A unique style that matches my personal brand.</li>
+</ul>
+<hr/>
+<h2 id="tech-stack">Tech Stack</h2>
+<p>Here’s what I chose for the project:</p>
+<ul>
+<li><strong>Vite</strong> — Instant setup and super fast HMR.</li>
+<li>️<strong>React</strong> — Familiar component structure.</li>
+<li><strong>Tailwind CSS</strong> — Rapid, utility-first styles.</li>
+<li><strong>Framer Motion</strong> — Smooth page and hover animations.</li>
+</ul>
+<hr/>
+<h2 id="what-i-learned">What I Learned</h2>
+<ul>
+<li>Vite + Tailwind is a super productive combo — zero setup pain.</li>
+<li>Framer Motion makes it effortless to add smooth, delightful animations.</li>
+<li>Self-hosting is the way to go — full control and no recurring fees.</li>
+</ul>
+<h4 id="thats-my-process--if-you-want-the-source-code-or-need-help-setting-up-your-own-link-in-bio-page-let-me-know">That’s my process — if you want the source code or need help setting up your own link-in-bio page, let me know! 🚀</h4> </article> </main>  </body> <footer class="text-zinc-500 p-4 text-center">
+&copy; 2025 <a href="https://bio.hacklab.dog/">Tomy Maritano</a>. All rights reserved.
+</footer> </html>

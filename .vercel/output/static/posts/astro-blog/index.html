@@ -1,0 +1,87 @@
+<!DOCTYPE html><html lang="en"> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v5.10.0"><!-- Primary Meta Tags --><title>How I Built My Blog with Astro: My Step-by-Step Process / A Developer’s Journal</title><meta name="title" content="How I Built My Blog with Astro: My Step-by-Step Process / A Developer’s Journal"><meta name="description" content="Here’s the full story of how I rebuilt my blog with Astro — including all the tools, NPM packages, and lessons learned along the way."><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="http://localhost:4321/posts/astro-blog/"><meta property="og:title" content="How I Built My Blog with Astro: My Step-by-Step Process / A Developer’s Journal"><meta property="og:description" content="Here’s the full story of how I rebuilt my blog with Astro — including all the tools, NPM packages, and lessons learned along the way."><meta property="og:image" content="http://localhost:4321/images/astro.jpg"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="http://localhost:4321/posts/astro-blog/"><meta property="twitter:title" content="How I Built My Blog with Astro: My Step-by-Step Process / A Developer’s Journal"><meta property="twitter:description" content="Here’s the full story of how I rebuilt my blog with Astro — including all the tools, NPM packages, and lessons learned along the way."><meta property="twitter:image" content="http://localhost:4321/images/astro.jpg"><script>
+  const theme = (() => {
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+      return localStorage.getItem('theme')
+    }
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      return 'dark'
+    }
+    return 'light'
+  })()
+
+  if (theme === 'light') {
+    document.documentElement.classList.remove('dark')
+  } else {
+    document.documentElement.classList.add('dark')
+  }
+</script><link rel="stylesheet" href="/_astro/_slug_.VMP-7kEU.css">
+<link rel="stylesheet" href="/_astro/_slug_.C8zOYmk1.css"><script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+		var script = document.createElement('script');
+		script.defer = true;
+		script.src = '/_vercel/insights/script.js';
+		var head = document.querySelector('head');
+		head.appendChild(script);
+	</script></head> <body class="bg-indigo-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-300 break-words leading-6 transition-colors duration-500"> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="ZMiVj7" component-url="/_astro/Navbar.hqotd-9u.js" component-export="default" renderer-url="/_astro/client.DDo7MzBH.js" props="{&quot;posts&quot;:[1,[]]}" ssr client="only" opts="{&quot;name&quot;:&quot;Navbar&quot;,&quot;value&quot;:&quot;react&quot;}"></astro-island>  <main class="pt-[56px]"> <article class="markdown-body"> <img class="mb-6" width="720" height="360" src="/images/astro.jpg" alt="How I Built My Blog with Astro: My Step-by-Step Process"> <h1>How I Built My Blog with Astro: My Step-by-Step Process</h1> <p class="text-zinc-600 dark:text-zinc-400 mb-2 italic">Here’s the full story of how I rebuilt my blog with Astro — including all the tools, NPM packages, and lessons learned along the way.</p> <time class="text-xs text-zinc-500 dark:text-zinc-500 mb-6 block">
+📅 6/1/2025 </time> <p>I recently rebuilt my personal blog using <strong><a href="https://astro.build">Astro</a></strong>, and I want to share the whole process — from the first <code>npx create astro@latest</code> to the NPM packages and components that make it work.</p>
+<p>If you’re looking to do something similar, I hope this guide gives you a clear roadmap. ⚡</p>
+<hr>
+<h2 id="getting-started">Getting Started</h2>
+<p>When I decided to redo my blog, my goals were clear:</p>
+<ul>
+<li><strong>Fast and lightweight</strong></li>
+<li><strong>Focus on writing content</strong></li>
+<li><strong>No complicated CMS — just Markdown files</strong></li>
+<li><strong>Easy to host, scale, and maintain</strong></li>
+</ul>
+<p>That’s why I picked <strong>Astro</strong> — it’s perfect for this kind of project.</p>
+<hr>
+<h2 id="initial-setup">Initial Setup</h2>
+<p>Here’s what I ran to get going:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Create a new Astro project</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> astro@latest</span><span style="color:#9ECBFF"> my-blog</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> my-blog</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Add Tailwind CSS for quick styling</span></span>
+<span class="line"><span style="color:#B392F0">npx</span><span style="color:#9ECBFF"> astro</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> tailwind</span></span></code></pre>
+<p>Why Tailwind?
+No custom CSS boilerplate, just utility classes and I can focus on layout without writing repetitive CSS.</p>
+<h2 id="npm-packages-i-installed">NPM Packages I Installed</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">astro</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> Core</span><span style="color:#9ECBFF"> framework.</span></span>
+<span class="line"><span style="color:#B392F0">@astrojs/tailwind</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> Easy</span><span style="color:#9ECBFF"> utility-first</span><span style="color:#9ECBFF"> styles.</span></span>
+<span class="line"><span style="color:#B392F0">@astrojs/mdx</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> Support</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> writing</span><span style="color:#9ECBFF"> posts</span><span style="color:#9ECBFF"> and</span><span style="color:#9ECBFF"> components</span><span style="color:#9ECBFF"> in</span><span style="color:#9ECBFF"> MDX.</span></span>
+<span class="line"><span style="color:#B392F0">@astrojs/rss</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> RSS</span><span style="color:#9ECBFF"> feed</span><span style="color:#9ECBFF"> generation</span><span style="color:#9ECBFF"> for</span><span style="color:#9ECBFF"> my</span><span style="color:#9ECBFF"> blog.</span></span>
+<span class="line"><span style="color:#B392F0">date-fns</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> Formatting</span><span style="color:#9ECBFF"> dates</span><span style="color:#9ECBFF"> in</span><span style="color:#9ECBFF"> posts.</span></span>
+<span class="line"><span style="color:#B392F0">recharts</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> Interactive</span><span style="color:#9ECBFF"> graphs.</span></span>
+<span class="line"><span style="color:#B392F0">astrojs/image</span><span style="color:#9ECBFF"> —</span><span style="color:#9ECBFF"> Optimized</span><span style="color:#9ECBFF"> image</span><span style="color:#9ECBFF"> handling`</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install @astrojs/mdx @astrojs/rss date-fns recharts</span></span></code></pre>
+<h2 id="️-writing-content">✍️ Writing Content</h2>
+<p>Astro makes content super easy. I just drop .md or .mdx files into src/content/posts.
+Each file looks like this:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"><span style="color:#B392F0">title:</span><span style="color:#9ECBFF"> "My First Blog Post"</span></span>
+<span class="line"><span style="color:#B392F0">date:</span><span style="color:#9ECBFF"> "2025-06-02"</span></span>
+<span class="line"><span style="color:#B392F0">excerpt:</span><span style="color:#9ECBFF"> "A quick look at my process."</span></span>
+<span class="line"><span style="color:#B392F0">coverImage:</span><span style="color:#9ECBFF"> "/images/my-post.jpg"</span></span>
+<span class="line"><span style="color:#B392F0">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#B392F0">Your</span><span style="color:#9ECBFF"> markdown</span><span style="color:#9ECBFF"> content</span><span style="color:#9ECBFF"> goes</span><span style="color:#9ECBFF"> here.</span></span>
+<span class="line"></span></code></pre>
+<h2 id="styling">Styling</h2>
+<p>With Tailwind set up, customizing the UI was painless.
+Here’s my typical style process:</p>
+<ul>
+<li>Define layout in components (Header.astro, Footer.astro)</li>
+<li>Use Tailwind utility classes directly (class=“text-center text-xl mt-8”)</li>
+<li>Keep a globals.css for any global tweaks.</li>
+</ul>
+<h2 id="what-i-learned">What I Learned</h2>
+<ul>
+<li>Astro’s island architecture really pays off — my blog loads instantly and doesn’t ship any JS I don’t need.</li>
+<li>Setting up Tailwind saved me hours of writing custom CSS.</li>
+<li>NPM packages like date-fns and @astrojs/rss make small tasks like formatting dates and generating feeds super easy.</li>
+<li>Interactive components fit right into MDX without any friction.</li>
+</ul>
+<h3 id="thats-my-process---thanks-for-reading">That’s my process. - Thanks for reading!</h3> </article> </main>  </body> <footer class="text-zinc-500 p-4 text-center">
+&copy; 2025 <a href="https://bio.hacklab.dog/">Tomy Maritano</a>. All rights reserved.
+</footer> </html>

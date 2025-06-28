@@ -320,7 +320,7 @@ async function renderEntry(entry) {
   }
   if (entry.deferredRender) {
     try {
-      const { default: contentModules } = await import('./content-modules_C_SD3VnC.mjs');
+      const { default: contentModules } = await import('./content-modules_D9XxxXq2.mjs');
       const renderEntryImport = contentModules.get(entry.filePath);
       return render({
         collection: "",
