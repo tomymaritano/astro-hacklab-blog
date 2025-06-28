@@ -4,16 +4,15 @@ import Navbar from '../components/Navbar';
 import Header from '../components/Header.astro';
 import PostGrid from '../components/PostGrid.astro';
 import ContentLayout from '../components/ContentLayout.astro';
-import { getCollection } from 'astro:content';
 import Footer from '../components/Footer.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../content/config';
 import { getLangFromUrl, useTranslations } from '../lib/i18n';
+import { getPostsForLanguage } from '../lib/posts';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const allPosts = await getCollection('posts');
-const posts = allPosts.filter(post => post && post.data && post.data.title);
+const posts = await getPostsForLanguage(lang);
 ---
 
 <!doctype html>

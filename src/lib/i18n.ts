@@ -119,6 +119,7 @@ export function useTranslations(lang: Language) {
 
 export function getLocalizedUrl(url: string, lang: Language): string {
   const segments = url.split('/').filter(Boolean);
+  const hasTrailingSlash = url.endsWith('/') && url !== '/';
 
   // Remove existing language prefix if present
   if (segments[0] && segments[0] in languages) {
@@ -130,7 +131,14 @@ export function getLocalizedUrl(url: string, lang: Language): string {
     segments.unshift(lang);
   }
 
-  return '/' + segments.join('/');
+  let result = '/' + segments.join('/');
+
+  // Preserve trailing slash for consistency
+  if (hasTrailingSlash && result !== '/') {
+    result += '/';
+  }
+
+  return result;
 }
 
 export function removeLanguagePrefix(url: string): string {
@@ -141,4 +149,8 @@ export function removeLanguagePrefix(url: string): string {
   }
 
   return '/' + segments.join('/');
+}
+
+export function getPostsCollection(lang: Language): 'posts-en' | 'posts-es' {
+  return `posts-${lang}` as 'posts-en' | 'posts-es';
 }

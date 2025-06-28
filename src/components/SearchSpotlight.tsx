@@ -31,6 +31,25 @@ export default function SearchSpotlight({ posts, isMobile = false }: SearchSpotl
     return searchQuery.trim() ? searchResults : [];
   }, [searchQuery, searchResults]);
 
+  const handlePostClick = useCallback(
+    (post: Post) => {
+      if (searchQuery.trim()) {
+        addRecentSearch(searchQuery);
+      }
+      closeSearch();
+      window.location.href = `/posts/${post.slug}`;
+    },
+    [searchQuery, addRecentSearch, closeSearch]
+  );
+
+  const handleRecentSearchClick = useCallback(
+    (query: string) => {
+      setSearchQuery(query);
+      setTimeout(() => inputRef.current?.focus(), 50);
+    },
+    [setSearchQuery]
+  );
+
   // Update search results when query or posts change
   useEffect(() => {
     if (!posts || !Array.isArray(posts)) {
@@ -84,25 +103,6 @@ export default function SearchSpotlight({ posts, isMobile = false }: SearchSpotl
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [isSearchOpen, filtered, openSearch, closeSearch, handlePostClick]);
-
-  const handlePostClick = useCallback(
-    (post: Post) => {
-      if (searchQuery.trim()) {
-        addRecentSearch(searchQuery);
-      }
-      closeSearch();
-      window.location.href = `/posts/${post.slug}`;
-    },
-    [searchQuery, addRecentSearch, closeSearch]
-  );
-
-  const handleRecentSearchClick = useCallback(
-    (query: string) => {
-      setSearchQuery(query);
-      setTimeout(() => inputRef.current?.focus(), 50);
-    },
-    [setSearchQuery]
-  );
 
   // Focus input when search opens
   useEffect(() => {

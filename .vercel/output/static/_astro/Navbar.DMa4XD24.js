@@ -1,6 +1,6 @@
 import { j as o } from './jsx-runtime.D_zvdyIk.js';
 import { R as j, r as l, a as ne } from './index.DQLiH3RP.js';
-import { c as k, A as W, m as S } from './proxy.BfBJbiZp.js';
+import { c as k, A as F, m as S } from './proxy.BfBJbiZp.js';
 import './index.D__klQuC.js';
 import './index.CKz0Jdri.js';
 /**
@@ -440,19 +440,32 @@ function T({ posts: e, isMobile: r = !1 }) {
     } = Pe(),
     g = l.useRef(null),
     b = l.useRef(-1),
-    v = n.trim() ? s : [];
-  (l.useEffect(() => {
-    if (!e || !Array.isArray(e)) {
-      c([]);
-      return;
-    }
-    if (!n.trim()) {
-      c([]);
-      return;
-    }
-    const p = e.filter(h => h && h.title && h.title.toLowerCase().includes(n.toLowerCase()));
-    (c(p), (b.current = -1));
-  }, [n, e, c]),
+    v = l.useMemo(() => (n.trim() ? s : []), [n, s]),
+    m = l.useCallback(
+      p => {
+        (n.trim() && f(n), a(), (window.location.href = `/posts/${p.slug}`));
+      },
+      [n, f, a]
+    ),
+    w = l.useCallback(
+      p => {
+        (d(p), setTimeout(() => g.current?.focus(), 50));
+      },
+      [d]
+    );
+  return (
+    l.useEffect(() => {
+      if (!e || !Array.isArray(e)) {
+        c([]);
+        return;
+      }
+      if (!n.trim()) {
+        c([]);
+        return;
+      }
+      const p = e.filter(h => h && h.title && h.title.toLowerCase().includes(n.toLowerCase()));
+      (c(p), (b.current = -1));
+    }, [n, e, c]),
     l.useEffect(() => {
       const p = h => {
         if ((h.metaKey || h.ctrlKey) && h.key === 'k')
@@ -474,163 +487,158 @@ function T({ posts: e, isMobile: r = !1 }) {
         document.addEventListener('keydown', p),
         () => document.removeEventListener('keydown', p)
       );
-    }, [t, v, u, a]),
+    }, [t, v, u, a, m]),
     l.useEffect(() => {
       t && setTimeout(() => g.current?.focus(), 50);
-    }, [t]));
-  const m = p => {
-      (n.trim() && f(n), a(), (window.location.href = `/posts/${p.slug}`));
-    },
-    w = p => {
-      (d(p), setTimeout(() => g.current?.focus(), 50));
-    };
-  return o.jsxs(o.Fragment, {
-    children: [
-      o.jsx('button', {
-        className: `inline-flex items-center space-x-2 transition ${r ? 'text-white hover:text-indigo-400' : 'text-black dark:text-white hover:text-indigo-500'}`,
-        onClick: () => {
-          (u(), setTimeout(() => g.current?.focus(), 50));
-        },
-        'aria-label': 'Search posts',
-        title: 'Cmd + K',
-        children: o.jsx(fe, { size: 24 }),
-      }),
-      o.jsx(W, {
-        children:
-          t &&
-          o.jsx(S.div, {
-            className:
-              'fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md',
-            onClick: a,
-            initial: { opacity: 0 },
-            animate: { opacity: 1 },
-            exit: { opacity: 0 },
-            children: o.jsxs(S.div, {
-              role: 'dialog',
-              'aria-modal': 'true',
+    }, [t]),
+    o.jsxs(o.Fragment, {
+      children: [
+        o.jsx('button', {
+          className: `inline-flex items-center space-x-2 transition ${r ? 'text-white hover:text-indigo-400' : 'text-black dark:text-white hover:text-indigo-500'}`,
+          onClick: () => {
+            (u(), setTimeout(() => g.current?.focus(), 50));
+          },
+          'aria-label': 'Search posts',
+          title: 'Cmd + K',
+          children: o.jsx(fe, { size: 24 }),
+        }),
+        o.jsx(F, {
+          children:
+            t &&
+            o.jsx(S.div, {
               className:
-                'bg-zinc-900 text-white border border-zinc-800 rounded-2xl p-6 w-full max-w-2xl shadow-2xl mt-60',
-              onClick: p => p.stopPropagation(),
-              initial: { scale: 0.9, opacity: 0 },
-              animate: { scale: 1, opacity: 1 },
-              exit: { scale: 0.9, opacity: 0 },
-              children: [
-                o.jsxs('div', {
-                  className: 'flex items-center justify-between mb-4',
-                  children: [
-                    o.jsx('h2', { className: 'text-sm font-medium', children: 'Search posts' }),
-                    o.jsxs('div', {
-                      className: 'flex items-center space-x-2 text-xs text-zinc-400',
-                      children: [
-                        o.jsx('kbd', {
-                          className: 'px-2 py-1 bg-zinc-800 rounded',
-                          children: 'Cmd+K',
-                        }),
-                        o.jsx('span', { children: 'to toggle' }),
-                      ],
-                    }),
-                  ],
-                }),
-                o.jsxs('div', {
-                  className: 'relative mb-4',
-                  children: [
-                    o.jsx('input', {
-                      ref: g,
-                      value: n,
-                      onChange: p => d(p.target.value),
-                      placeholder: 'Type to search posts...',
-                      className:
-                        'w-full px-4 py-2 rounded-md bg-zinc-800 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm',
-                    }),
-                    n &&
-                      o.jsx('button', {
-                        onClick: () => d(''),
-                        className: 'absolute right-3 top-2.5 text-zinc-400 hover:text-white',
-                        children: o.jsx(U, { size: 16 }),
-                      }),
-                  ],
-                }),
-                !n.trim() &&
-                  i.length > 0 &&
+                'fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md',
+              onClick: a,
+              initial: { opacity: 0 },
+              animate: { opacity: 1 },
+              exit: { opacity: 0 },
+              children: o.jsxs(S.div, {
+                role: 'dialog',
+                'aria-modal': 'true',
+                className:
+                  'bg-zinc-900 text-white border border-zinc-800 rounded-2xl p-6 w-full max-w-2xl shadow-2xl mt-60',
+                onClick: p => p.stopPropagation(),
+                initial: { scale: 0.9, opacity: 0 },
+                animate: { scale: 1, opacity: 1 },
+                exit: { scale: 0.9, opacity: 0 },
+                children: [
                   o.jsxs('div', {
-                    className: 'mb-4',
+                    className: 'flex items-center justify-between mb-4',
                     children: [
+                      o.jsx('h2', { className: 'text-sm font-medium', children: 'Search posts' }),
                       o.jsxs('div', {
-                        className: 'flex items-center justify-between mb-2',
+                        className: 'flex items-center space-x-2 text-xs text-zinc-400',
                         children: [
-                          o.jsx('h3', {
-                            className: 'text-xs font-medium text-zinc-400',
-                            children: 'Recent searches',
+                          o.jsx('kbd', {
+                            className: 'px-2 py-1 bg-zinc-800 rounded',
+                            children: 'Cmd+K',
                           }),
-                          o.jsx('button', {
-                            onClick: x,
-                            className: 'text-xs text-zinc-400 hover:text-white',
-                            children: 'Clear',
-                          }),
+                          o.jsx('span', { children: 'to toggle' }),
                         ],
-                      }),
-                      o.jsx('div', {
-                        className: 'flex flex-wrap gap-2',
-                        children: i.map((p, h) =>
-                          o.jsxs(
-                            'button',
-                            {
-                              onClick: () => w(p),
-                              className:
-                                'flex items-center space-x-1 px-2 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-xs transition',
-                              children: [
-                                o.jsx(oe, { size: 12, className: 'text-zinc-500' }),
-                                o.jsx('span', { children: p }),
-                              ],
-                            },
-                            h
-                          )
-                        ),
                       }),
                     ],
                   }),
-                o.jsxs('div', {
-                  className: 'max-h-64 overflow-y-auto',
-                  children: [
-                    n.trim() &&
-                      o.jsxs('div', {
-                        className: 'text-xs text-zinc-400 mb-2',
-                        children: [v.length, ' result', v.length !== 1 ? 's' : ''],
+                  o.jsxs('div', {
+                    className: 'relative mb-4',
+                    children: [
+                      o.jsx('input', {
+                        ref: g,
+                        value: n,
+                        onChange: p => d(p.target.value),
+                        placeholder: 'Type to search posts...',
+                        className:
+                          'w-full px-4 py-2 rounded-md bg-zinc-800 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm',
                       }),
-                    o.jsx('ul', {
-                      className: 'divide-y divide-zinc-800 text-sm',
-                      children:
-                        n.trim() && v.length === 0
-                          ? o.jsxs('li', {
-                              className: 'py-4 text-center text-zinc-500',
-                              children: ['No posts found for "', n, '"'],
-                            })
-                          : v.map((p, h) =>
-                              o.jsxs(
-                                'li',
-                                {
-                                  className: `p-3 cursor-pointer flex items-center gap-3 transition hover:bg-zinc-800 ${h === b.current ? 'bg-zinc-800' : ''}`,
-                                  onClick: () => m(p),
-                                  children: [
-                                    o.jsx(ae, {
-                                      size: 16,
-                                      className: 'text-zinc-500 flex-shrink-0',
-                                    }),
-                                    o.jsx('span', { className: 'flex-1', children: p.title }),
-                                  ],
-                                },
-                                p.slug
-                              )
-                            ),
+                      n &&
+                        o.jsx('button', {
+                          onClick: () => d(''),
+                          className: 'absolute right-3 top-2.5 text-zinc-400 hover:text-white',
+                          children: o.jsx(U, { size: 16 }),
+                        }),
+                    ],
+                  }),
+                  !n.trim() &&
+                    i.length > 0 &&
+                    o.jsxs('div', {
+                      className: 'mb-4',
+                      children: [
+                        o.jsxs('div', {
+                          className: 'flex items-center justify-between mb-2',
+                          children: [
+                            o.jsx('h3', {
+                              className: 'text-xs font-medium text-zinc-400',
+                              children: 'Recent searches',
+                            }),
+                            o.jsx('button', {
+                              onClick: x,
+                              className: 'text-xs text-zinc-400 hover:text-white',
+                              children: 'Clear',
+                            }),
+                          ],
+                        }),
+                        o.jsx('div', {
+                          className: 'flex flex-wrap gap-2',
+                          children: i.map((p, h) =>
+                            o.jsxs(
+                              'button',
+                              {
+                                onClick: () => w(p),
+                                className:
+                                  'flex items-center space-x-1 px-2 py-1 bg-zinc-800 hover:bg-zinc-700 rounded text-xs transition',
+                                children: [
+                                  o.jsx(oe, { size: 12, className: 'text-zinc-500' }),
+                                  o.jsx('span', { children: p }),
+                                ],
+                              },
+                              h
+                            )
+                          ),
+                        }),
+                      ],
                     }),
-                  ],
-                }),
-              ],
+                  o.jsxs('div', {
+                    className: 'max-h-64 overflow-y-auto',
+                    children: [
+                      n.trim() &&
+                        o.jsxs('div', {
+                          className: 'text-xs text-zinc-400 mb-2',
+                          children: [v.length, ' result', v.length !== 1 ? 's' : ''],
+                        }),
+                      o.jsx('ul', {
+                        className: 'divide-y divide-zinc-800 text-sm',
+                        children:
+                          n.trim() && v.length === 0
+                            ? o.jsxs('li', {
+                                className: 'py-4 text-center text-zinc-500',
+                                children: ['No posts found for "', n, '"'],
+                              })
+                            : v.map((p, h) =>
+                                o.jsxs(
+                                  'button',
+                                  {
+                                    className: `w-full p-3 cursor-pointer flex items-center gap-3 transition hover:bg-zinc-800 text-left ${h === b.current ? 'bg-zinc-800' : ''}`,
+                                    onClick: () => m(p),
+                                    children: [
+                                      o.jsx(ae, {
+                                        size: 16,
+                                        className: 'text-zinc-500 flex-shrink-0',
+                                      }),
+                                      o.jsx('span', { className: 'flex-1', children: p.title }),
+                                    ],
+                                  },
+                                  p.slug
+                                )
+                              ),
+                      }),
+                    ],
+                  }),
+                ],
+              }),
             }),
-          }),
-      }),
-    ],
-  });
+        }),
+      ],
+    })
+  );
 }
 function _e(e, r, { checkForDefaultPrevented: t = !0 } = {}) {
   return function (s) {
@@ -785,7 +793,7 @@ function Be(e) {
   );
 }
 function Ae(e) {
-  const r = Fe(e),
+  const r = We(e),
     t = l.forwardRef((n, s) => {
       const { children: i, ...u } = n,
         a = l.Children.toArray(i),
@@ -811,7 +819,7 @@ function Ae(e) {
     });
   return ((t.displayName = `${e}.Slot`), t);
 }
-function Fe(e) {
+function We(e) {
   const r = l.forwardRef((t, n) => {
     const { children: s, ...i } = t;
     if (l.isValidElement(s)) {
@@ -823,13 +831,13 @@ function Fe(e) {
   });
   return ((r.displayName = `${e}.SlotClone`), r);
 }
-var We = Symbol('radix.slottable');
+var Fe = Symbol('radix.slottable');
 function Ue(e) {
   return (
     l.isValidElement(e) &&
     typeof e.type == 'function' &&
     '__radixId' in e.type &&
-    e.type.__radixId === We
+    e.type.__radixId === Fe
   );
 }
 function Ke(e, r) {
@@ -1066,8 +1074,11 @@ function et() {
 const C = { en: 'English', es: 'Español' },
   tt = 'en';
 function B(e, r) {
-  const t = e.split('/').filter(Boolean);
-  return (t[0] && t[0] in C && t.shift(), r !== tt && t.unshift(r), '/' + t.join('/'));
+  const t = e.split('/').filter(Boolean),
+    n = e.endsWith('/') && e !== '/';
+  (t[0] && t[0] in C && t.shift(), r !== tt && t.unshift(r));
+  let s = '/' + t.join('/');
+  return (n && s !== '/' && (s += '/'), s);
 }
 function A({ currentLang: e, currentPath: r, isMobile: t = !1 }) {
   const [n, s] = l.useState(!1);
@@ -1172,7 +1183,7 @@ function A({ currentLang: e, currentPath: r, isMobile: t = !1 }) {
         ],
       });
 }
-const F = [{ href: '/', label: '' }];
+const W = [{ href: '/', label: '' }];
 function ct({ posts: e, currentLang: r = 'en', currentPath: t = '/' }) {
   const [n, s] = l.useState(!1),
     [i, u] = l.useState(!1),
@@ -1207,7 +1218,7 @@ function ct({ posts: e, currentLang: r = 'en', currentPath: t = '/' }) {
               o.jsx(et, {}),
               o.jsx('nav', {
                 className: 'hidden md:flex flex-1 justify-center space-x-8 text-md font-medium',
-                children: F.map(({ href: c, label: f }) =>
+                children: W.map(({ href: c, label: f }) =>
                   o.jsxs(
                     'a',
                     {
@@ -1250,7 +1261,7 @@ function ct({ posts: e, currentLang: r = 'en', currentPath: t = '/' }) {
             ],
           }),
         }),
-        o.jsx(W, {
+        o.jsx(F, {
           children:
             n &&
             o.jsx(S.div, {
@@ -1268,7 +1279,7 @@ function ct({ posts: e, currentLang: r = 'en', currentPath: t = '/' }) {
                 exit: { y: 40, opacity: 0 },
                 transition: { type: 'spring', stiffness: 250, damping: 24 },
                 children: [
-                  F.map(({ href: c, label: f }) =>
+                  W.map(({ href: c, label: f }) =>
                     o.jsx(
                       'a',
                       {

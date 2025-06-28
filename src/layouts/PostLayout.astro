@@ -5,16 +5,16 @@ import { SITE_TITLE } from '../content/config';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
 import { getLangFromUrl } from '../lib/i18n';
-import { getCollection } from 'astro:content';
+import { getPostsForLanguage } from '../lib/posts';
 
 const { post, Content } = Astro.props;
 
 // Get current language and path
 const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
 
 // Get all posts for the search functionality
-const allPosts = await getCollection('posts');
-const posts = allPosts.filter(post => post && post.data && post.data.title);
+const posts = await getPostsForLanguage(lang);
 ---
 
 <!doctype html>
@@ -28,7 +28,7 @@ const posts = allPosts.filter(post => post && post.data && post.data.title);
   </head>
 
   <Body>
-    <Navbar client:idle posts={posts} currentLang={lang} currentPath={Astro.url.pathname} />
+    <Navbar client:idle posts={posts} currentLang={lang} currentPath={currentPath} />
 
     {/* Scoped styles */}
     <style is:global>
