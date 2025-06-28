@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from "astro:content";
+import PostLayout from "../../layouts/PostLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts
+    .filter(post => post && post.slug) // Filter out undefined posts
+    .map((post) => ({ params: { slug: post.slug }, props: { post } }));
+}
+
+const { post } = Astro.props;
+
+// Guard against undefined post
+if (!post) {
+  throw new Error('Post not found');
+}
+
+const { Content } = await render(post);
+---
+
+<PostLayout post={post} Content={Content} />

@@ -1,25 +1,25 @@
-"use client";
+'use client';
 
-import * as Switch from "@radix-ui/react-switch";
-import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
-import { motion } from "framer-motion";
+import * as Switch from '@radix-ui/react-switch';
+import { useEffect, useState } from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = saved === "dark" || (!saved && prefersDark);
+    const saved = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const isDark = saved === 'dark' || (!saved && prefersDark);
     setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
+    document.documentElement.classList.toggle('dark', isDark);
   }, []);
 
   const toggleTheme = (checked: boolean) => {
     setDark(checked);
-    document.documentElement.classList.toggle("dark", checked);
-    localStorage.setItem("theme", checked ? "dark" : "light");
+    document.documentElement.classList.toggle('dark', checked);
+    localStorage.setItem('theme', checked ? 'dark' : 'light');
   };
 
   return (
@@ -31,13 +31,13 @@ export default function ThemeToggle() {
       {/* Íconos fijos */}
       <Sun
         className={`absolute left-3 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
-          dark ? "opacity-30 text-yellow-200" : "opacity-100 text-orange-400"
+          dark ? 'opacity-30 text-yellow-200' : 'opacity-100 text-orange-400'
         }`}
         size={16}
       />
       <Moon
         className={`absolute right-3 top-1/2 -translate-y-1/2 transition-colors duration-300 ${
-          dark ? "opacity-100 text-yellow-200" : "opacity-30 text-zinc-900"
+          dark ? 'opacity-100 text-yellow-200' : 'opacity-30 text-zinc-900'
         }`}
         size={16}
       />
@@ -46,17 +46,15 @@ export default function ThemeToggle() {
       <Switch.Thumb asChild>
         <motion.div
           className={`absolute w-8 h-8 rounded-full flex items-center justify-center shadow-lg border border-white/20 transition-colors duration-500 ${
-            dark
-              ? "bg-gray-950"
-              : "bg-indigo-600"
+            dark ? 'bg-gray-950' : 'bg-indigo-600'
           }`}
           layout
           whileTap={{ scale: 0.9 }}
-          transition={{ type: "spring", stiffness: 250, damping: 20 }}
+          transition={{ type: 'spring', stiffness: 250, damping: 20 }}
           animate={{ x: dark ? 42 : 2, rotate: dark ? 360 : 0 }}
         >
           <motion.div
-            key={dark ? "moon" : "sun"}
+            key={dark ? 'moon' : 'sun'}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             exit={{ scale: 0 }}

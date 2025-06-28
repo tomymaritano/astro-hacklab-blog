@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FileText, Search, X } from "lucide-react";
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FileText, Search } from 'lucide-react';
 
 interface Post {
   title: string;
@@ -15,15 +15,20 @@ interface SearchSpotlightProps {
 
 export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
   const [open, setOpen] = useState(false);
-  const [query, setQuery] = useState("");
-  const [filtered, setFiltered] = useState(posts);
+  const [query, setQuery] = useState('');
+  const [filtered, setFiltered] = useState(posts || []);
   const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    if (!posts || !Array.isArray(posts)) {
+      setFiltered([]);
+      return;
+    }
+
     setFiltered(
-      posts.filter((post) =>
-        post.title.toLowerCase().includes(query.toLowerCase())
+      posts.filter(
+        post => post && post.title && post.title.toLowerCase().includes(query.toLowerCase())
       )
     );
     setActiveIndex(-1);
@@ -31,24 +36,22 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key === "k") {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
         e.preventDefault();
-        setOpen((prev) => !prev);
+        setOpen(prev => !prev);
         setTimeout(() => inputRef.current?.focus(), 50);
-      } else if (e.key === "Escape") {
+      } else if (e.key === 'Escape') {
         setOpen(false);
       } else if (open) {
-        if (e.key === "ArrowDown")
-          setActiveIndex((i) => (i + 1) % filtered.length);
-        if (e.key === "ArrowUp")
-          setActiveIndex((i) => (i - 1 + filtered.length) % filtered.length);
-        if (e.key === "Enter" && activeIndex >= 0) {
+        if (e.key === 'ArrowDown') setActiveIndex(i => (i + 1) % filtered.length);
+        if (e.key === 'ArrowUp') setActiveIndex(i => (i - 1 + filtered.length) % filtered.length);
+        if (e.key === 'Enter' && activeIndex >= 0 && filtered[activeIndex]) {
           window.location.href = `/posts/${filtered[activeIndex].slug}`;
         }
       }
     };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [open, filtered, activeIndex]);
 
   return (
@@ -78,7 +81,7 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
               role="dialog"
               aria-modal="true"
               className="bg-zinc-900 text-white border border-zinc-800 rounded-2xl p-6 w-full max-w-2xl shadow-2xl mt-60"
-              onClick={(e) => e.stopPropagation()}
+              onClick={e => e.stopPropagation()}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
@@ -88,7 +91,7 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
               <input
                 ref={inputRef}
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={e => setQuery(e.target.value)}
                 placeholder="Type to search posts..."
                 className="w-full px-4 py-2 rounded-md bg-zinc-800 border border-zinc-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm mb-4"
               />
@@ -100,8 +103,9 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
                   filtered.map((post, i) => (
                     <li
                       key={post.slug}
-                      className={`p-2 cursor-pointer flex items-center gap-2 transition ${i === activeIndex ? "bg-zinc-800" : ""
-                        }`}
+                      className={`p-2 cursor-pointer flex items-center gap-2 transition ${
+                        i === activeIndex ? 'bg-zinc-800' : ''
+                      }`}
                       onClick={() => (window.location.href = `/posts/${post.slug}`)}
                     >
                       <FileText size={14} className="text-zinc-500" />

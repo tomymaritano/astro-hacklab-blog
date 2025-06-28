@@ -1,5 +1,5 @@
 // src/content/config.ts
-import { defineCollection, z } from "astro:content";
+import { defineCollection, z } from 'astro:content';
 
 const posts = defineCollection({
   schema: z.object({

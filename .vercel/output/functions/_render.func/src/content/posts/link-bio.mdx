@@ -1,0 +1,101 @@
+---
+title: 'How I Built My Link-in-Bio with Vite, React & Framer Motion'
+date: '2025-06-02'
+excerpt: 'Here’s the process of creating my animated link-in-bio using Vite, React, Tailwind CSS, and Framer Motion.'
+coverImage: '/images/vite.png'
+---
+
+I wanted a **minimal, animated link-in-bio** that I could easily host and update myself — without relying on third-party services.
+
+Here’s my process, tools, and what I learned along the way.
+
+---
+
+![My workspace on the go](/bio.jpg)
+
+## How I Built It — Step by Step
+
+Here’s the **exact process** I followed to build this link-in-bio page:
+
+### 1. Installed the environment
+
+First, I set up a new Vite + React project:
+
+```bash
+npm create vite@latest link-in-bio -- --template react
+cd link-in-bio
+```
+
+Then added my main dependencies:
+
+```bash
+npm install tailwindcss postcss autoprefixer framer-motion
+npx tailwindcss init -p
+```
+
+And configured Tailwind in tailwind.config.js + index.css.
+
+### 2. Created the core components
+
+Next, I broke the UI into small pieces:
+
+- ProfileImage.jsx — top image + profile info.
+- LinkButton.jsx — each animated link.
+- SocialLinks.jsx — optional social icon row.
+
+Each component was styled with Tailwind utility classes.
+
+### 3. Integrated animations with Framer Motion
+
+I used Framer Motion for smooth interactions:
+• Added motion.a to each link so they scale on hover.
+• Wrapped the entire layout in a motion.div to add a fade-in on page load.
+
+### 4. Added a Dark Mode Toggle
+
+I created a simple ToggleDarkMode.jsx:
+
+- Uses a state hook (useState) to switch between dark and light.
+- Toggles a class on html or body so Tailwind’s dark: variants kick in.
+- Wrapped the entire app in a parent div that smoothly transitions its background color using a Tailwind class like transition-colors duration-500.
+
+Wrapped everything for a subtle effect
+
+### Finally, I wrapped the main layout in a motion.div so that:
+
+- On page mount, opacity animates in.
+- On theme toggle, a scale or opacity change adds a gentle transition.
+
+This subtle polish made the app feel more dynamic and fun to use.
+
+---
+
+## Why I Built It Myself
+
+Most link-in-bio tools look the same and charge a subscription.  
+I decided to build my own because:
+
+- ️ **Full control** — Content, style, hosting, data.
+- **Performance** — Minimal footprint and blazing fast.
+- **Custom animations** — A unique style that matches my personal brand.
+
+---
+
+## Tech Stack
+
+Here’s what I chose for the project:
+
+- **Vite** — Instant setup and super fast HMR.
+- ️**React** — Familiar component structure.
+- **Tailwind CSS** — Rapid, utility-first styles.
+- **Framer Motion** — Smooth page and hover animations.
+
+---
+
+## What I Learned
+
+- Vite + Tailwind is a super productive combo — zero setup pain.
+- Framer Motion makes it effortless to add smooth, delightful animations.
+- Self-hosting is the way to go — full control and no recurring fees.
+
+#### That’s my process — if you want the source code or need help setting up your own link-in-bio page, let me know! 🚀

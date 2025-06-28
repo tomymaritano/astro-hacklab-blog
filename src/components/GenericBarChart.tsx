@@ -1,14 +1,14 @@
-'use client'
+'use client';
 
-import { ResponsiveBar } from '@nivo/bar'
+import { ResponsiveBar } from '@nivo/bar';
 
 interface GenericBarChartProps {
-  data: Record<string, any>[]
-  indexBy: string
-  keys: string[]
-  height?: number
-  axisLeftLegend?: string
-  axisBottomLegend?: string
+  data: Record<string, any>[];
+  indexBy: string;
+  keys: string[];
+  height?: number;
+  axisLeftLegend?: string;
+  axisBottomLegend?: string;
 }
 
 export default function GenericBarChart({
@@ -19,6 +19,24 @@ export default function GenericBarChart({
   axisLeftLegend,
   axisBottomLegend,
 }: GenericBarChartProps) {
+  // Guard against undefined/empty data
+  if (!data || !Array.isArray(data) || data.length === 0) {
+    return (
+      <div style={{ width: '100%', height }} className="flex items-center justify-center">
+        <p className="text-gray-500 dark:text-gray-400">No data available</p>
+      </div>
+    );
+  }
+
+  // Guard against undefined keys
+  if (!keys || keys.length === 0) {
+    return (
+      <div style={{ width: '100%', height }} className="flex items-center justify-center">
+        <p className="text-gray-500 dark:text-gray-400">No chart keys defined</p>
+      </div>
+    );
+  }
+
   return (
     <div style={{ width: '100%', height }}>
       <ResponsiveBar
@@ -51,5 +69,5 @@ export default function GenericBarChart({
         }}
       />
     </div>
-  )
+  );
 }

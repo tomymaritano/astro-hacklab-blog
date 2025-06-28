@@ -1,0 +1,99 @@
+---
+title: 'How I Built the Blacro Studio Website with Next.js, Tailwind CSS & Framer Motion'
+date: '2025-06-24'
+excerpt: 'Here’s the process of creating a minimalist, animated site for Blacro Studio — a creative agency — using Next.js, Tailwind CSS, and Framer Motion.'
+coverImage: '/images/blacro-studio.jpg'
+---
+
+When the team at **Blacro Studio** reached out, I knew this was going to be more than just another website. They had a strong creative identity already — my job was to translate that into a smooth, high-performance web experience.
+
+Here’s my process, the tools I chose, and what I learned along the way.
+
+---
+
+![Design assets from the client](/images/blacro-studio.jpg)
+
+## How I Built It — Step by Step
+
+Here’s the **exact process** I followed to build this site:
+
+### 1. Set up the environment
+
+First, I scaffolded the app with **Next.js** and installed Tailwind CSS:
+
+```bash
+npx create-next-app@latest blacro-website
+cd blacro-website
+npm install tailwindcss framer-motion
+npx tailwindcss init -p
+```
+
+And then I configured `tailwind.config.js` and added my global styles.
+
+### 2. Designed components to fit the brand
+
+Blacro Studio had its branding and assets ready.  
+I split the UI into small pieces:
+
+- `Header.jsx` — bold title section
+- `AboutSection.jsx` — company story with animated text
+- `ProjectCardCarousel.jsx` — marquee-style project carousel
+- `ContactForm.jsx` — responsive contact form
+- `Footer.jsx` — minimal footer with links
+
+Each component was built using utility-first Tailwind classes to keep everything easy to customize.
+
+### 3. Added smooth animations with Framer Motion
+
+To add life to the UI:
+
+- Wrapped key sections with `motion.div` for fade-ins on scroll.
+- Added scale and opacity animations to links and images on hover.
+- Built an infinite marquee for the project carousel.
+
+### 4. Images and responsiveness
+
+With `next/image`:
+
+- Defined `sizes` and `fill` for responsive images.
+- Kept the layout stable across all devices.
+- Compressed images for faster load times without losing quality.
+
+### 5. Backend & contact form
+
+Created a simple `POST /api/contact` endpoint:
+
+- Validated inputs with **Zod**.
+- Sent emails with **Nodemailer**.
+- Added basic feedback messages for successful and failed submissions.
+
+---
+
+## Why this setup works
+
+This project matches my dev style — minimal boilerplate, high performance, and tailored to the client’s brand:
+
+- ⚡ **Full control** — No generic templates.
+- 🎨 **Custom design** — Every detail matches the brand.
+- 🚀 **Performance-first** — Lazy-loading, optimization, and no bloat.
+
+---
+
+## Tech Stack
+
+Here’s what powered the build:
+
+- **Next.js** — SSR, routing, image optimization.
+- **Tailwind CSS** — Rapid utility-first styles.
+- **Framer Motion** — Smooth animations with minimal setup.
+- **Nodemailer** — Reliable email delivery.
+
+---
+
+## What I Learned
+
+- Aligning design and development is easier with early communication.
+- Balancing visual flair with performance is key.
+- Break the UI into small, reusable components to scale efficiently.
+
+#### That’s my process — if you’d like the source code or help creating your own branded site, reach out! ✌️

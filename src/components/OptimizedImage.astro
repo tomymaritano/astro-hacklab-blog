@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  quality?: number;
+  format?: 'webp' | 'avif' | 'png' | 'jpg';
+}
+
+const { 
+  src, 
+  alt, 
+  width = 800, 
+  height = 400, 
+  class: className = '', 
+  loading = 'lazy',
+  quality = 80,
+  format = 'webp'
+} = Astro.props;
+---
+
+<Image
+  src={src}
+  alt={alt}
+  width={width}
+  height={height}
+  loading={loading}
+  quality={quality}
+  format={format}
+  class={className}
+/>
