@@ -1,13 +1,12 @@
 ---
-import '../styles/global.css';
-import Navbar from '../components/Navbar';
-import Header from '../components/Header.astro';
-import PostGrid from '../components/PostGrid.astro';
-import ContentLayout from '../components/ContentLayout.astro';
+import '../../styles/global.css';
+import Navbar from '../../components/Navbar';
+import Header from '../../components/Header.astro';
+import PostGrid from '../../components/PostGrid.astro';
+import ContentLayout from '../../components/ContentLayout.astro';
 import { getCollection } from 'astro:content';
-import Footer from '../components/Footer.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../content/config';
-import { getLangFromUrl, useTranslations } from '../lib/i18n';
+import Footer from '../../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../../lib/i18n';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -24,17 +23,17 @@ const posts = allPosts.filter(post => post && post.data && post.data.title);
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={t('meta.description')} />
 
-    <!-- Language alternates -->
-    <link rel="alternate" hreflang="en" href="/" />
-    <link rel="alternate" hreflang="es" href="/es/" />
-    <link rel="alternate" hreflang="x-default" href="/" />
-
     <!-- Preload critical resources -->
     <link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Optimize resource hints -->
     <link rel="dns-prefetch" href="//vercel.live" />
     <link rel="preconnect" href="https://vitals.vercel-analytics.com" />
+
+    <!-- Language alternates -->
+    <link rel="alternate" hreflang="en" href="/" />
+    <link rel="alternate" hreflang="es" href="/es/" />
+    <link rel="alternate" hreflang="x-default" href="/" />
 
     <!-- Reduce layout shift -->
     <style>
@@ -49,7 +48,7 @@ const posts = allPosts.filter(post => post && post.data && post.data.title);
   <body class="bg-white dark:bg-[#0B0B0B] min-h-screen flex flex-col text-black dark:text-white">
     <Navbar client:idle posts={posts} currentLang={lang} currentPath={Astro.url.pathname} />
 
-    <Header title={SITE_TITLE} subtitle={SITE_DESCRIPTION} />
+    <Header />
 
     <main class="py-5 mt-10">
       <ContentLayout>

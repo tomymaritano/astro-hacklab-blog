@@ -7,14 +7,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SearchSpotlight from './SearchSpotlight';
 import ThemeToggle from './ThemeToggle';
 import LogoSVG from './LogoSVG';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const links = [{ href: '/', label: '' }];
 
 interface NavbarProps {
   posts: { slug: string; data: { title: string } }[];
+  currentLang?: string;
+  currentPath?: string;
 }
 
-export default function Navbar({ posts }: NavbarProps) {
+export default function Navbar({ posts, currentLang = 'en', currentPath = '/' }: NavbarProps) {
   const [open, setOpen] = useState(false);
   const [hidden, setHidden] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -78,6 +81,7 @@ export default function Navbar({ posts }: NavbarProps) {
             <SearchSpotlight
               posts={posts.map(post => ({ title: post.data.title, slug: post.slug }))}
             />
+            <LanguageSwitcher currentLang={currentLang as any} currentPath={currentPath} />
             <ThemeToggle />
           </div>
 
