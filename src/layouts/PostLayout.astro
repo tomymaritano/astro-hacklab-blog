@@ -1,16 +1,24 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import Body from '../components/Body.astro';
 import { SITE_TITLE } from '../content/config';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer.astro';
+import { getLangFromUrl } from '../lib/i18n';
+import { getCollection } from 'astro:content';
 
 const { post, Content } = Astro.props;
+
+// Get current language and path
+const lang = getLangFromUrl(Astro.url);
+
+// Get all posts for the search functionality
+const allPosts = await getCollection('posts');
+const posts = allPosts.filter(post => post && post.data && post.data.title);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <BaseHead
       title={post.data.title + ` / ${SITE_TITLE}`}
@@ -20,7 +28,7 @@ const { post, Content } = Astro.props;
   </head>
 
   <Body>
-    <Navbar client:only="react" posts={post.data.posts ?? []} />
+    <Navbar client:idle posts={posts} currentLang={lang} currentPath={Astro.url.pathname} />
 
     {/* Scoped styles */}
     <style is:global>

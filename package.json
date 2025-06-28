@@ -44,7 +44,8 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
-    "recharts": "^2.15.4"
+    "recharts": "^2.15.4",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
