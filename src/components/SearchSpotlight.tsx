@@ -11,9 +11,10 @@ interface Post {
 
 interface SearchSpotlightProps {
   posts: Post[];
+  isMobile?: boolean;
 }
 
-export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
+export default function SearchSpotlight({ posts, isMobile = false }: SearchSpotlightProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [filtered, setFiltered] = useState(posts || []);
@@ -57,7 +58,11 @@ export default function SearchSpotlight({ posts }: SearchSpotlightProps) {
   return (
     <>
       <button
-        className="inline-flex items-center space-x-2 text-black dark:text-white hover:text-indigo-500 transition"
+        className={`inline-flex items-center space-x-2 transition ${
+          isMobile 
+            ? 'text-white hover:text-indigo-400' 
+            : 'text-black dark:text-white hover:text-indigo-500'
+        }`}
         onClick={() => {
           setOpen(true);
           setTimeout(() => inputRef.current?.focus(), 50);

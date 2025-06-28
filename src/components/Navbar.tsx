@@ -132,13 +132,14 @@ export default function Navbar({ posts, currentLang = 'en', currentPath = '/' }:
                   href="https://github.com/tu-usuario"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 text-black dark:text-white hover:text-indigo-500 transition"
+                  className="p-2 text-white hover:text-indigo-400 transition"
                   aria-label="GitHub"
                 >
                   <FaGithub size={24} />
                 </a>
                 <SearchSpotlight
                   posts={posts.map(post => ({ title: post.data.title, slug: post.slug }))}
+                  isMobile={true}
                 />
                 <LanguageSwitcher
                   currentLang={currentLang as any}
