@@ -2,6 +2,7 @@
 title: 'Construyendo un Blog Rápido con Astro: Mi Experiencia'
 date: '2025-06-25'
 excerpt: 'Por qué elegí Astro sobre Next.js para mi blog personal y cómo configuré todo en un fin de semana.'
+coverImage: '/images/astro.jpg'
 ---
 
 # Construyendo un Blog Rápido con Astro: Mi Experiencia
